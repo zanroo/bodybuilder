@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/danpaz/bodybuilder.svg?branch=master)](https://travis-ci.org/danpaz/bodybuilder)
 
 An elasticsearch query body builder. Easily build complex queries for
-elasticsearch with a simple, predictable api.
+elasticsearch with a simple, predictable api. Built for node.
 
 ![bodybuilder](img/bodybuilder.jpeg)
 
