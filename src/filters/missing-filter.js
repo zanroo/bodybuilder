@@ -1,4 +1,8 @@
+import boolFilter from './bool-filter'
+import existsFilter from './exists-filter'
+
 /**
+ * missing filter is deprecated use negative exists instead
  * Construct a Missing filter.
  *
  * @memberof Filters
@@ -7,9 +11,5 @@
  * @return {Object}       Missing filter.
  */
 export default function missingFilter(field) {
-  return {
-    missing: {
-      field
-    }
-  }
+  return boolFilter('not',existsFilter(field));
 }

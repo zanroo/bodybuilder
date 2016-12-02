@@ -8,7 +8,7 @@ describe('nestedFilter', () => {
     expect(result).to.eql({
       nested: {
         path: 'obj1',
-        filter: {
+        query: {
           term: {
             'obj1.color': 'blue'
           }

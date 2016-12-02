@@ -27,7 +27,7 @@ export default function nestedFilter(path, type, field, ...args) {
   return {
     nested: {
       path: path,
-      filter: filter
+      query: filter
     }
   }
 }
