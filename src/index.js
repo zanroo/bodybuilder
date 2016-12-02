@@ -27,8 +27,8 @@ class Bodybuilder {
    * @returns {Object} Query body.
    */
   build(version) {
-    if (version === 'v2') return this._buildV2()
-    return this._buildV1()
+    if (version === 'v1') return this._buildV1()
+    return this._buildV2()
   }
 
   _buildV1() {
