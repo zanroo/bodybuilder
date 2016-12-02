@@ -11,5 +11,5 @@ import existsFilter from './exists-filter'
  * @return {Object}       Missing filter.
  */
 export default function missingFilter(field) {
-  return boolFilter('not',existsFilter(field));
+  return boolFilter('not',existsFilter(field))
 }
