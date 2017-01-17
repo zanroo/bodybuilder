@@ -4,6 +4,7 @@ import fuzzyFilter from './fuzzy-filter'
 import matchFilter from './match-filter'
 import geoBoundingBoxFilter from './geo-bounding-box-filter'
 import geoDistanceFilter from './geo-distance-filter'
+import geoPolygon from './geo-polygon-filter'
 import geoShapeFilter from './geo-shape-filter'
 import idsFilter from './ids-filter'
 import matchAllFilter from './match-all-filter'
@@ -38,6 +39,10 @@ export default {
   geoBoundingBox: geoBoundingBoxFilter,
   geoboundingbox: geoBoundingBoxFilter,
   'geo-bounding-box': geoBoundingBoxFilter,
+  geo_polygon: geoPolygon,
+  geoPolygon: geoPolygon,
+  geopolygon: geoPolygon,
+  'geo-polygon': geoPolygon,
   geo_distance: geoDistanceFilter,
   geodistance: geoDistanceFilter,
   geoDistance: geoDistanceFilter,
