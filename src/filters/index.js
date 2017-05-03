@@ -17,6 +17,7 @@ import wildcardFilter from './wildcard-filter'
 import termFilter from './term-filter'
 import termsFilter from './terms-filter'
 import typeFilter from './type-filter'
+import scriptFilter from './script-filter'
 
 /**
  * Construct elasticsearch filters.
@@ -64,5 +65,6 @@ export default {
   wildcard: wildcardFilter,
   term: termFilter,
   terms: termsFilter,
-  type: typeFilter
+  type: typeFilter,
+  script: scriptFilter
 }

@@ -8,7 +8,7 @@ describe('boolFilter', () => {
     let result = boolFilter('and', filter)
     expect(result).to.eql({
       bool: {
-        must: [
+        filter: [
           {
             exists: {
               user: 'kimchy'
