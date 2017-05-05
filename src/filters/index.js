@@ -68,5 +68,5 @@ export default {
   terms: termsFilter,
   type: typeFilter,
   script: scriptFilter,
-  'match-phrase': matchPhraseFilter,
+  'match_phrase': matchPhraseFilter,
 }
