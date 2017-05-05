@@ -8,7 +8,7 @@ describe('boolQuery', () => {
     let result = boolQuery('and', query)
     expect(result).to.eql({
       bool: {
-        must: [
+        filter: [
           {
             match: {
               message: 'this is a test'

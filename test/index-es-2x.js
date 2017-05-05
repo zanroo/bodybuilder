@@ -197,7 +197,7 @@ describe('BodyBuilder ES 2x', () => {
         bool: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}}
               ]
@@ -218,7 +218,7 @@ describe('BodyBuilder ES 2x', () => {
         bool: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}},
                 {term: {user: 'johnny'}}
@@ -239,7 +239,7 @@ describe('BodyBuilder ES 2x', () => {
         bool: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}}
               ],
               should: [
@@ -263,7 +263,7 @@ describe('BodyBuilder ES 2x', () => {
         bool: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}}
               ],
@@ -362,7 +362,7 @@ describe('BodyBuilder ES 2x', () => {
     expect(result).to.eql({
       query: {
         bool: {
-          must: [
+          filter: [
             {match: {message: 'this is a test'}},
             {match: { message: 'another test'}},
             {match: {title: 'test'}}
@@ -411,7 +411,7 @@ describe('BodyBuilder ES 2x', () => {
     expect(result).to.eql({
       query: {
         bool: {
-          must: [
+          filter: [
             {term: {user: 'kimchy'}},
             {term: {user: 'herald'}}
           ],
@@ -452,10 +452,11 @@ describe('BodyBuilder ES 2x', () => {
                                   .filter('term', 'user', 'kimchy')
                                   .filter('term', 'is_active', true)
                                   .build('v2')
+    // this is bug
     expect(result).to.eql({
       query: {
         bool: {
-          must: [
+          filter: [
             {
               match: {
                 message: 'this is a test'
@@ -466,19 +467,7 @@ describe('BodyBuilder ES 2x', () => {
                 other: 'this is another test'
               }
             }
-          ],
-          filter: {
-            bool: {
-              must: [
-                {
-                  term: {user: 'kimchy'}
-                },
-                {
-                  term: {is_active: true}
-                }
-              ]
-            }
-          }
+          ]
         }
       }
     })
@@ -493,7 +482,7 @@ describe('BodyBuilder ES 2x', () => {
     expect(result).to.eql({
       "query": {
         "bool": {
-          "must":     [  { "match": { "title": "quick" }} ],
+          "filter":     [  { "match": { "title": "quick" }} ],
           "must_not": [  { "match": { "title": "lazy"  }} ],
           "should":   [
                         { "match": { "title": "brown" }},

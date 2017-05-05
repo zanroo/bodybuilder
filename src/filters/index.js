@@ -18,6 +18,7 @@ import termFilter from './term-filter'
 import termsFilter from './terms-filter'
 import typeFilter from './type-filter'
 import scriptFilter from './script-filter'
+import matchPhraseFilter from './match-phrase-filter.js'
 
 /**
  * Construct elasticsearch filters.
@@ -66,5 +67,6 @@ export default {
   term: termFilter,
   terms: termsFilter,
   type: typeFilter,
-  script: scriptFilter
+  script: scriptFilter,
+  'match-phrase': matchPhraseFilter,
 }

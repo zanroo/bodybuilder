@@ -117,7 +117,7 @@ describe('BodyBuilder', () => {
         filtered: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}}
               ]
@@ -138,7 +138,7 @@ describe('BodyBuilder', () => {
         filtered: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}},
                 {term: {user: 'johnny'}}
@@ -159,7 +159,7 @@ describe('BodyBuilder', () => {
         filtered: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}}
               ],
               should: [
@@ -183,7 +183,7 @@ describe('BodyBuilder', () => {
         filtered: {
           filter: {
             bool: {
-              must: [
+              filter: [
                 {term: {user: 'kimchy'}},
                 {term: {user: 'herald'}}
               ],
@@ -332,7 +332,7 @@ describe('BodyBuilder', () => {
     expect(result).to.eql({
       query: {
         bool: {
-          must: [
+          filter: [
             {match: {message: 'this is a test'}},
             {match: { message: 'another test'}},
             {match: {title: 'test'}}
@@ -381,7 +381,7 @@ describe('BodyBuilder', () => {
     expect(result).to.eql({
       query: {
         bool: {
-          must: [
+          filter: [
             {term: {user: 'kimchy'}},
             {term: {user: 'herald'}}
           ],
@@ -425,7 +425,7 @@ describe('BodyBuilder', () => {
     expect(result).to.eql({
       "query": {
         "bool": {
-          "must":     [  { "match": { "title": "quick" }} ],
+          "filter":     [  { "match": { "title": "quick" }} ],
           "must_not": [  { "match": { "title": "lazy"  }} ],
           "should":   [
                         { "match": { "title": "brown" }},

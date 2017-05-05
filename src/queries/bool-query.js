@@ -1,9 +1,10 @@
 const CONDITIONS_MAP = {
+  filter: 'filter',
   must: 'must',
   should: 'should',
   must_not: 'must_not',
   mustNot: 'must_not',
-  and: 'must',
+  and: 'filter',
   or: 'should',
   not: 'must_not'
 }

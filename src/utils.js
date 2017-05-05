@@ -50,7 +50,7 @@ export function boolMerge(newObj, currentObj, boolType = 'and') {
   }
 
   // Make bools out of the new and existing filters.
-  boolCurrent = currentObj.bool ? currentObj : queries.bool('must', currentObj)
+  boolCurrent = currentObj.bool ? currentObj : queries.bool('filter', currentObj)
   boolNew = newObj.bool ? newObj : queries.bool(boolType, newObj)
 
   return mergeConcat({}, boolCurrent, boolNew)

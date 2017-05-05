@@ -54,7 +54,7 @@ describe('Utils', () => {
       let result = boolMerge(q1, q2)
       expect(result).to.eql({
         bool: {
-          must: [
+          filter: [
             {term: {user: 'me'}},
             {term: {user: 'you'}}
           ]
@@ -69,7 +69,7 @@ describe('Utils', () => {
       let result = boolMerge(q1, q2, boolType)
       expect(result).to.eql({
         bool: {
-          must: [
+          filter: [
             {term: {user: 'me'}}
           ],
           must_not: [
@@ -83,7 +83,7 @@ describe('Utils', () => {
       let q1 = {term: {user: 'them'}}
       let q2 = {
         bool: {
-          must: [
+          filter: [
             {term: {user: 'me'}},
             {term: {user: 'you'}}
           ]
@@ -92,7 +92,7 @@ describe('Utils', () => {
       let result = boolMerge(q1, q2)
       expect(result).to.eql({
         bool: {
-          must: [
+          filter: [
             {term: {user: 'me'}},
             {term: {user: 'you'}},
             {term: {user: 'them'}}
