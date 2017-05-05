@@ -9,7 +9,7 @@
  */
 export default function matchPhraseFilter(field, term) {
   return {
-    'match-phrase': {
+    'match_phrase': {
       [field]: term
     }
   }
