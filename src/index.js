@@ -112,6 +112,24 @@ class Bodybuilder {
     return this
   }
 
+  sortScript(type, inline, order) {
+    this._body.sort = this._body.sort || [];
+
+    const script = {
+      _script: {
+        type,
+        script: {
+          lang: 'painless',
+          inline
+        },
+        order
+      }
+    }
+
+    this._body.sort.push(script);
+    return this
+  }
+
   /**
    * Set a *from* offset value, for paginating a query.
    *

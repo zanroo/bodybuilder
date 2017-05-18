@@ -41,6 +41,24 @@ describe('BodyBuilder', () => {
     })
   })
 
+  it('should set a sort by script', () => {
+    let result = new BodyBuilder().sortScript('number', 'doc[\'tat\'].value + doc[\'fuck\'].value', 'desc').build('v1')
+    expect(result).to.eql({
+      "sort": [
+        {
+          "_script": {
+            "type": "number",
+            "script": {
+              "lang": "painless",
+              "inline": "doc['tat'].value + doc['fuck'].value"
+            },
+            "order": "desc"
+          }
+        }
+      ]
+    })
+  })
+
   it('should overwrite the sort direction', () => {
     let result = new BodyBuilder().sort('timestamp', 'desc')
                                   .sort('timestamp', 'asc')
